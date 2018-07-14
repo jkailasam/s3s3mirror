@@ -22,7 +22,7 @@ fi
 
 # Check the output for errors - this is very crude and should be removed
 # when #51 is resolved ( https://github.com/cobbzilla/s3s3mirror/issues/51 )
-grep --quiet --ignore-case --max-count=1 'error ' $TEMPFILE
+grep -i -q -m 1 'error ' $TEMPFILE
 RESULT=$?
 [ $RESULT -eq 0 ] && EXITCODE=1 || EXITCODE=0
 
